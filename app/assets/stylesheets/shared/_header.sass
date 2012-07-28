@@ -1,0 +1,108 @@
+$header-top-bottom-padding: 0px
+$header-left-right-padding: 10px
+$header-height: 124px
+
+#container
+  padding: 10px 100px
+  margin-left: auto
+  margin-right: auto
+  
+#center-column
+  //box-shadow: 0px 0px 8px black
+  border-radius: 5px
+  
+.button
+  font-size: 12px
+  text-decoration: none
+  background-color: #D14836
+  font-family: arial
+  background-image: -moz-linear-gradient(center top , #DD4B39, #D14836)
+  border: 1px solid #B0281A
+  font-weight: bold
+  border-radius: 3px
+  color: #fff
+  background-color: #c00
+  padding: 5px 15px
+  &:hover
+    background-color: #C53727
+    background-image: -moz-linear-gradient(center top , #DD4B39, #C53727)
+  &:focus
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset
+
+#login
+  float: right
+  width: 200px
+  position: relative
+  top: 10px
+  right: 10px
+  z-index: 10
+  a
+    float: right
+    outline: none
+
+#header
+  background-color: #C53727
+  //border-radius: 5px 5px 0px 0px
+  border-radius: 5px
+  color: #ffffff
+  padding: $header-top-bottom-padding $header-left-right-padding
+  height: $header-height
+  #header-logo-text
+    text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.25)
+    margin-top: 40px
+    a
+      text-decoration: none
+      color: white
+      font:
+        size: 36px
+        //family: 'Jura', sans-serif
+  span
+    &.column
+      float: left
+    &.column-1
+      margin: 10px
+    &.column-2
+      position: relative
+      left: 20px
+    &.fulltext
+      font:
+        size: 20px
+        //family: 'Jura', sans-serif
+
+  ul#menu
+    float: left
+    position: relative
+    //top: 0px
+    list-style-type: none
+    padding: 0px
+    display: block
+    box-shadow: 0px 0px 3px #000
+    border-radius: 0 0 4px 4px
+    overflow: hidden
+    margin: 0px
+    li.menu-item
+      float: left
+      font-weight: bold
+      background-color: #c00
+      padding: 5px 10px
+      //background-color: #C53727
+      //background-image: -moz-linear-gradient(center top , #DD4B39, #C53727)
+      //border: 1px solid black
+      &:hover
+        background-color: #a00
+      a
+        text-decoration: none
+        color:  #fff
+        text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25)
+        &:hover
+          //text-decoration: underline
+      &.first
+      &.last
+
+//#timer
+  background-color: green
+  color: white
+  position: absolute
+  top: 0
+  left: 0
+  

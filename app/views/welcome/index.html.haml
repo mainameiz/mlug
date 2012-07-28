@@ -1,0 +1,16 @@
+= link_to 'Create new post', new_post_path
+%table
+  - @posts.each do |post|
+    %tr
+      %td
+        = post.author.email
+      %td
+        = post.title
+      %td
+        = link_to 'Show', post
+      %td
+        = link_to 'Edit', edit_post_path(post)
+      %td
+        = link_to 'Destroy', post, :method => :delete, :confirm => 'Are you sure?'
+    
+

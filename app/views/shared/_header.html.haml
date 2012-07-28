@@ -1,0 +1,24 @@
+#login
+  - if current_user
+    = current_user.email
+  - else
+    = link_to "ВОЙТИ", new_user_session_path, :class => "button"
+
+#header
+  %span.column.column-1
+    = link_to root_path do
+      %img{ :src => "#{image_path("mlug-icon-small.png")}" }
+  %span.column.column-2
+    -#%ul#menu><
+      %li.menu-item.first
+        = link_to "На главную", root_path
+      %li.menu-item
+        = link_to "Календарь", root_path
+      %li.menu-item
+        = link_to "Форум", root_path
+      %li.menu-item.last
+        = link_to "О нас", about_path
+    #header-logo-text
+      = link_to "MLUG.ru", root_path, :class => "acronim"
+      %br
+      %span.fulltext Московская группа пользователей Linux

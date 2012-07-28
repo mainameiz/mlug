@@ -1,0 +1,9 @@
+%p
+  %b Email:
+  = @post.author.email
+%p
+  %b Title:
+  = @post.title
+= @post.body
+%br
+= link_to 'Edit', edit_post_path(@post)
