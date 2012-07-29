@@ -1,0 +1,35 @@
+= form_for current_user, :url => profile_path do |f|
+  %table.profile
+    %tr
+      %td
+        = f.label :nickname
+      %td
+        = f.text_field :nickname
+    %tr.line
+      %td
+        = f.label :email
+      %td
+        = f.text_field :email
+    %tr.line
+      %td
+        = f.label :jabber
+      %td
+        = f.text_field :jabber
+    %tr.line
+      %td
+        = f.label :city
+      %td
+        = f.text_field :city
+    %tr.line
+      %td
+        = f.label :distributions
+      %td
+        = f.text_field :distributions
+    %tr.line
+      %td
+      %td
+        = link_to "Сменить пароль", edit_user_registration_path
+    %tr.actions
+      %td
+      %td
+        = f.submit
