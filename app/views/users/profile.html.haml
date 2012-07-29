@@ -1,0 +1,18 @@
+- present @user do |user_presenter|
+  %table.profile
+    %tr
+      %td Nickname
+      %td
+        = user_presenter.nickname
+    %tr.line
+      %td Email
+      %td
+        = user_presenter.email
+    %tr.line
+      %td Jabber
+      %td
+        = user_presenter.jabber
+    %tr.line
+      %td City
+      %td
+        = user_presenter.city

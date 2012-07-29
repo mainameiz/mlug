@@ -1,6 +1,8 @@
 #login
   - if current_user
-    = current_user.email
+    = link_to current_user.email, profile_path
+    %br
+    = link_to "Quit", destroy_user_session_path, :method => :delete
   - else
     = link_to "ВОЙТИ", new_user_session_path, :class => "button"
 
