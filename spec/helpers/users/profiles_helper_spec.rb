@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe Users::ProfileHelper do
+describe Users::ProfilesHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

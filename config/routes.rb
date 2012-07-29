@@ -4,9 +4,7 @@ Mlug::Application.routes.draw do
 
   resources :posts
 
-  devise_for :users, :controllers => { :passwords => "users/passwords" } do
-  
-  end
+  devise_for :users, :controllers => { :passwords => "users/passwords" }
   
   # Private
   namespace :users, :as => "" do

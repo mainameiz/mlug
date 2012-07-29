@@ -1,2 +1,2 @@
-module Users::ProfileHelper
+module Users::ProfilesHelper
 end

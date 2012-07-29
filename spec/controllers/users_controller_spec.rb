@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe UsersController do
+  login_as(:user)
 
   describe "GET 'profile'" do
     it "returns http success" do
-      get 'profile'
+      visit user_profile_path(user)
       response.should be_success
     end
   end

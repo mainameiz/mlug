@@ -1,2 +1,2 @@
-module Users::PasswordHelper
+module Users::PasswordsHelper
 end

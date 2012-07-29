@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Users::PasswordController do
+describe Users::PasswordsController do
 
 end
