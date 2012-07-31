@@ -1,0 +1,7 @@
+ru:
+  devise:
+    registrations:
+      edit:
+        title: 'Обновление пароля'
+        leave_blank: '(оставьте пустым, если не хотите менять)'
+        current_password_notice: '(нам нужен Ваш текущий пароль для подтверждения изменений)'

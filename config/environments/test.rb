@@ -36,5 +36,5 @@ Mlug::Application.configure do
   config.active_support.deprecation = :stderr
 
   # for devise
-  default_url_options[:host] = 'http://dev.mlug.rails.lo/'
+  default_url_options[:host] = 'http://test.mlug.rails.lo/'
 end

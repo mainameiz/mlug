@@ -2,14 +2,14 @@
   - if current_user
     = link_to current_user.email, profile_path
     %br
-    = link_to "Quit", destroy_user_session_path, :method => :delete
+    = link_to t('.sign_out'), destroy_user_session_path, :method => :delete
   - else
-    = link_to "ВОЙТИ", new_user_session_path, :class => "button"
+    = link_to t('.sign_in'), new_user_session_path, :class => "button"
 
 #header
   %span.column.column-1
     = link_to root_path do
-      %img{ :src => "#{image_path("mlug-icon-small.png")}" }
+      %img{ :src => image_path("mlug-icon-small.png") }
   %span.column.column-2
     -#%ul#menu><
       %li.menu-item.first
@@ -23,4 +23,4 @@
     #header-logo-text
       = link_to "MLUG.ru", root_path, :class => "acronim"
       %br
-      %span.fulltext Московская группа пользователей Linux
+      %span.fulltext= t('.mlug-fulltext')

@@ -1,0 +1,7 @@
+en:
+  devise:
+    registrations:
+      edit:
+        title: 'Password changing'
+        leave_blank: '(leave blank if you don''t want to change it)'
+        current_password_notice: '(we need your current password to confirm your changes)'

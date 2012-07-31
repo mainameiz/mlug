@@ -2,19 +2,19 @@
   %h2 Вход
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .control-group
-      = f.label "Email"
+      = f.label :email
       .controls
         = f.email_field :email
     .control-group
-      = f.label "Пароль"
+      = f.label :password
       .controls
         = f.password_field :password
     - if devise_mapping.rememberable?
       .control-group
         .controls
           = f.check_box :remember_me
-          = f.label "Запомнить меня"
+          = f.label t('devise.remember_me')
     .control-group.center
-      = f.submit "ВОЙТИ", :class => "button"
+      = f.submit t('devise.sign_in'), :class => "button"
     .control-group.center
       = render "devise/shared/links"
