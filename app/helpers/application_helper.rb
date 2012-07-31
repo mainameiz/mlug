@@ -1,5 +1,3 @@
-require 'pp'
-
 module ApplicationHelper
 
   def present(object, klass = nil)
