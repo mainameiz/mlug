@@ -1,4 +1,3 @@
 %p
   Добро пожаловать, #{@resource.email}!
-%p Вы можете подтвердить Ваш аккаунт кликнув на ссылку:
-%p= link_to 'Подтвердить мой аккаунт', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+%p Вы можете подтвердить Ваш аккаунт кликнув на ссылку #{link_to 'Подтвердить мой аккаунт', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)}
