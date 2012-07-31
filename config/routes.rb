@@ -2,7 +2,9 @@ Mlug::Application.routes.draw do
   get "welcome/index"
   get "welcome/about"
 
-  resources :posts
+  resources :posts do
+    resources :comments, :except => [ :new, :show ]
+  end
 
   devise_for :users, :controllers => { :passwords => "users/passwords" }
   

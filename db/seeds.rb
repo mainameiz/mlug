@@ -1,3 +1,4 @@
 require 'factory_girl_rails'
 
-FactoryGirl.create(:user)
+FactoryGirl.build(:user).save
+FactoryGirl.create(:post)

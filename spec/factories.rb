@@ -1,8 +1,9 @@
 FactoryGirl.define do
+
   factory :user, :aliases => [ :author, :commenter ] do
     password "asdasd"
-#  password_confirmation { |u| u.password }
-    email { "asd#{id}@asdasd.ru" }
+    sequence(:email) { |n| "asd#{n}@asd.ru" }
+    after(:build) { |user| user.skip_confirmation! }
   end
 
   factory :post do
@@ -11,11 +12,11 @@ FactoryGirl.define do
     body 'Lorem Ipsum ...'
   end
 
-  #factory :comment, :aliases => [ :parent_comment ] do
-  #  commenter
-  #  post
-  #  parent_comment
-  #
-  #  body 'Useful comment'
-  #end
+  factory :comment, :aliases => [ :parent ] do
+    commenter
+    post
+    parent
+  
+    text 'Useful comment'
+  end
 end
