@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      post: Пост
+    attributes:
+      user:
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Действующий пароль
+        distributions: Дистрибутивы
+        jabber: Jabber
+        city: Город
+        nickname: Nickname
+      post:
+        title: Заголовок
+        body: Содержание

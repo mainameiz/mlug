@@ -19,18 +19,22 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 gem 'jquery-rails'
-gem 'capistrano'
 gem 'devise'
 gem 'haml'
-gem 'surb', :path => '../gems/surb'
+gem 'rails-i18n'
+
+# Deploy related gems
 gem 'unicorn'
+gem 'capistrano'
 
 gem 'rspec-rails', :group => [ :test, :development ]
 gem 'guard', :group => [ :test, :development]
 
 group :development do
   gem 'vagrant'
+  gem 'surb', :path => '../gems/surb'
 
   # Only on Linux
   gem 'libnotify'

@@ -1,0 +1,6 @@
+ru:
+  shared:
+    header:
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      mlug-fulltext: Московская группа пользователей Linux
