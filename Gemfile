@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'haml'
 gem 'rails-i18n'
+gem 'cancan'
 
 # Deploy related gems
 gem 'unicorn'
