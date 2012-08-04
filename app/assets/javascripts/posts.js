@@ -1,0 +1,3 @@
+//=#require jquery.ui.all
+//= require_self
+//= require_tree ./posts

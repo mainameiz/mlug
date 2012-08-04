@@ -1,8 +1,13 @@
 en:
   are_you_sure: 'Are you sure?'
   back: 'Back'
+  create: 'Create'
   change: 'Change'
   update: 'Update'
   show: 'Show'
   edit: 'Edit'
   destroy: 'Destroy'
+  delete: 'Delete'
+  replay: 'Replay'
+  preview: 'Preview'
+  nothing_to_preview: 'Nothing to preview'

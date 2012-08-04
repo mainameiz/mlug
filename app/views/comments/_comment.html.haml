@@ -1,0 +1,16 @@
+.comment{ id: (comment.new_record? ? "new_comment" : "comment_#{comment.id}") }
+  %span.author_name
+    = comment.author.email
+    = link_to "#", post_path(comment.post, anchor: "comment_#{comment.id}")
+  %br
+  %span.comment_text= comment.text
+  %br
+  %span.comment_actions
+    - if can?(:replay, comment)
+      - if comment.new_record?
+        = t('replay')
+      - else
+        = link_to t('replay'), post_comment_path(comment.post, comment)
+  %br
+  .replays
+    = yield if block_given?

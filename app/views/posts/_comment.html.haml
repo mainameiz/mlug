@@ -1,0 +1,2 @@
+= render layout: 'comments/comment', locals: { comment: comment } do
+  = render partial: 'posts/comment', collection: comment.post.comments.select { |c| c.parent == comment }

@@ -55,6 +55,17 @@ module Mlug
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.precompile += [
+       'welcome.css', 'welcome.js',
+        'devise.css', 'devise.js',
+      'comments.css', 'comments.js',
+         'users.css', 'users.js',
+         'posts.css', 'posts.js',
+     'jquery-ui.css', 'jquery-ui.js',
+                      'hallo.js',
+                      'editor.js',
+                      'hallo-editor.js'
+    ]
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

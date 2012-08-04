@@ -12,19 +12,19 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
+  #gem 'font-awesome-sass-rails'
 end
 
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'haml'
 gem 'rails-i18n'
 gem 'cancan'
+#gem 'redcarpet'
+gem 'therubyracer', :platforms => :ruby
 
 # Deploy related gems
 gem 'unicorn'
@@ -45,6 +45,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'launchy'
   gem 'spork'
   gem 'guard-rspec'
   gem 'guard-spork'

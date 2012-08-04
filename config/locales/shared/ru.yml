@@ -1,8 +1,13 @@
 ru:
   are_you_sure: 'Вы уверены?'
   back: 'Назад'
+  create: 'Создать'
   change: 'Изменить'
   update: 'Обновить'
   show: 'Показать'
   edit: 'Редактировать'
   destroy: 'Уничтожить'
+  delete: 'Удалить'
+  replay: 'Ответить'
+  preview: 'Предпросмотр'
+  nothing_to_preview: 'Нечего показывать'

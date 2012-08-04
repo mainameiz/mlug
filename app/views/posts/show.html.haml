@@ -5,12 +5,17 @@
   %b= @post.title
 = @post.body
 %br
-= link_to t('edit'), edit_post_path(@post)
+- if can? :edit, @post
+  = link_to t('edit'), edit_post_path(@post)
 
-%p
-  = t('.add_comment')
-  = form_for [@post, @post.comments.build] do |f|
-    = f.label :text
-    = f.text_field :text
-    %p
-      = f.submit
+#comments
+  = comments_for(@post)
+
+- if can? :replay, Post
+  %p
+    = t('.add_comment')
+    = form_for [@post, @comment || @post.comments.build], url: replay_post_path(@post, anchor: "new_comment") do |f|
+      = f.text_area :text, rows: 4
+      %p
+        = f.submit t('replay')
+        = f.submit t('preview'), name: 'preview'

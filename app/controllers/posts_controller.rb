@@ -1,33 +1,40 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
-  
-  def index
-  end
+  load_and_authorize_resource
   
   def new
-    @post = Post.new
   end
   
+  def replay
+    @comment = @post.comments.build(params[:comment])
+    @comment.author = current_user
+    if params[:preview]
+      render :show
+    elsif @comment.save
+      redirect_to post_url(@post.id, :anchor => "comment_#{@comment.id}")
+    else
+      render :show
+    end
+  end
+
   def create
-    @post = Post.new(params[:post])
-    @post.author = current_user if current_user
-    if @post.save
+    @post.author = current_user
+    if params[:preview]
+      render :new
+    elsif @post.save
       redirect_to @post, :notice => "created"
     else
-      render :new, :notice => "SOmething went wrong"
+      render :new, :notice => "Something went wrong"
     end
   end
   
   def show
-    @post = Post.find(params[:id])
   end
   
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       redirect_to post_path(@post)
     else
@@ -36,5 +43,8 @@ class PostsController < ApplicationController
   end
   
   def destroy
+    @post.destroy
+    #flash[:notice] = I18n.t('')
+    redirect_to root_url
   end
 end

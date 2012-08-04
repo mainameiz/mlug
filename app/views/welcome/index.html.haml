@@ -9,8 +9,8 @@
       %td
         = link_to t('show'), post
       %td
-        = link_to t('edit'), edit_post_path(post)
+        - if can? :update, post
+          = link_to t('edit'), edit_post_path(post)
       %td
-        = link_to t('destroy'), post, :method => :delete, :confirm => t('are_you_sure')
-    
-
+        - if can? :delete, post
+          = link_to t('delete'), post, :method => :delete, :confirm => t('are_you_sure')
