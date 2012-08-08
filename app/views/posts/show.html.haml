@@ -1,21 +1,16 @@
-%p
-  %b= User.human_attribute_name(:email)
-  = link_to @post.author.email, user_profile_path(@post.author)
-%p
-  %b= @post.title
-= @post.body
-%br
-- if can? :edit, @post
-  = link_to t('edit'), edit_post_path(@post)
-
-#comments
-  = comments_for(@post)
-
-- if can? :replay, Post
-  %p
-    = t('.add_comment')
-    = form_for [@post, @comment || @post.comments.build], url: replay_post_path(@post, anchor: "new_comment") do |f|
-      = f.text_area :text, rows: 4
-      %p
-        = f.submit t('replay')
-        = f.submit t('preview'), name: 'preview'
+- present @post do |post_presenter|
+  %hr
+    %b= post_presenter.title
+  %hr
+  = post_presenter.body
+  = post_presenter.actions
+  %hr
+  #comments
+    = post_presenter.comments
+  - present (@comment || @post.comments.build) do |comment_presenter|
+    = post_presenter.replay_form(comment_presenter)
+    - if can? :replay, Comment
+      %script{ type: 'text/template', id: 'comment_form_template' }
+        = render partial: 'comments/replay_form', locals: { post: @post, comment: 'COMMENT', new_comment: Comment.new }
+      %script{ type: 'text/template', id: 'comment_template' }
+        = render partial: 'comments/comment', locals: { comment: current_user.comments.build { |c| c.post = @post }}

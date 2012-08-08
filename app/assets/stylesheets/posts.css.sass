@@ -1,22 +1,44 @@
-//= require jquery.ui.core
-//= require jquery.ui.theme
 //= require_self
 //= require_tree ./posts
 
-@import 'font-awesome'
-
-.comment
-
-.comment_actions
-  display: block
-
-.replays
-  margin-left: 20px
-  
 #post_preview
   display: block
   min-heigth: 100px
   
 #post_preview, #post_editor
   margin: 20px
-  
+
+article.post_preview
+  background-color: white
+  border-radius: 5px
+  border: 1px solid white
+  box-shadow: 0 0 5px black
+  margin: 15px 0px
+  padding: 10px
+
+.post_preview
+  .title
+    color: #555
+    &:hover
+      color: black
+  h2
+    padding: 0px 0px 10px 0px
+  .actions
+    float: right
+    position: relative
+    top: 0px
+    right: 12px
+    a
+      font-size: 12px
+      text-decoration: none
+      color: #555
+      padding: 5px
+      &:hover
+        color: black
+      i
+        font-size: 30px
+        vertical-align: middle
+  .info
+    float: right
+    position: relative
+    bottom: 20px

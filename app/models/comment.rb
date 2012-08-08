@@ -6,7 +6,11 @@ class Comment < ActiveRecord::Base
     class_name: 'Comment'
   belongs_to :post
   attr_accessible :text
-  validates :text,
-    :presence => true,
-    :length   => { :minimum => 1 }
+  validates :text,   presence: true
+  validates :author, presence: true
+  validates :post,   presence: true
+
+  def answers
+    post.comments.select { |c| c.parent == self }
+  end
 end

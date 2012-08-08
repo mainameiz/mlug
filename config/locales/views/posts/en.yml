@@ -1,3 +1,4 @@
-ru:
+en:
   posts:
-    new: 'Создать новый пост'
+    new: 'Create new post'
+    add_comment: 'Add comment'

@@ -1,0 +1,8 @@
+- if can? :update, post
+  = link_to edit_post_path(post), class: 'post-action', title: t('edit') do
+    %i.icon-pencil
+    = t('edit')
+- if can? :delete, post
+  = link_to post, :method => :delete, :confirm => t('are_you_sure'), title: t('delete') do
+    %i.icon-trash
+    = t('delete')

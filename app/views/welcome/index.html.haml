@@ -1,16 +1,2 @@
 = link_to t('posts.new'), new_post_path
-%table
-  - @posts.each do |post|
-    %tr
-      %td
-        = post.author.email
-      %td
-        = post.title
-      %td
-        = link_to t('show'), post
-      %td
-        - if can? :update, post
-          = link_to t('edit'), edit_post_path(post)
-      %td
-        - if can? :delete, post
-          = link_to t('delete'), post, :method => :delete, :confirm => t('are_you_sure')
+= render partial: 'welcome/post', collection: @posts

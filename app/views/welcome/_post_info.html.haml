@@ -1,0 +1,6 @@
+%span
+  %i.icon-comments-alt
+  = post.comments.count
+|
+%span
+  = link_to post.author.email, user_profile_path(post.author)

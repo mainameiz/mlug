@@ -11,3 +11,13 @@ ru:
   replay: 'Ответить'
   preview: 'Предпросмотр'
   nothing_to_preview: 'Нечего показывать'
+  read_more: "Читать дальше"
+  of_comments: "Комментариев"
+  helpers:
+    submit:
+      post:
+        create: 'Создать пост'
+        update: 'Обновить пост'
+        edit:   'Редактировать пост'
+        save:   'Сохранить пост'
+

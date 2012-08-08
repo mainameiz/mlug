@@ -1,7 +1,5 @@
 module PostsHelper
-  def comments_for(post)
-    render(partial: 'comment', collection: post.comments.select { |comment|
-      comment.parent.nil?
-    })
+  def answers_for(post_or_comment)
+    render partial: 'posts/comment', collection: post_or_comment.answers
   end
 end

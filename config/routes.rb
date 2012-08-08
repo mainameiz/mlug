@@ -4,7 +4,7 @@ Mlug::Application.routes.draw do
 
   resources :posts do
     member do
-      post 'comments', to: 'posts#replay', as: :replay
+      post '', to: 'posts#replay', as: :replay
     end
     resources :comments, :except => [ :index, :new, :create ] do
       member do

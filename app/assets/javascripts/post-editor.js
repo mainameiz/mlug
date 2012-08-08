@@ -5,8 +5,7 @@ $(document).ready(function() {
   $preview = $('#post_preview');
   $preview_buttons = $('.preview_button')
 
-  var converter = new Showdown.converter();
-  var default_content = $preview.html();
+  var default_content = $preview.attr('data-default-text');
   var preview_text = $preview_buttons.first().attr('value');
   var edit_text = $preview_buttons.first().attr('data-edit-text');
 
@@ -25,11 +24,7 @@ $(document).ready(function() {
     if (val === "") {
       $preview.html(default_content);
     } else {
-      var content = val.replace(/&/g, '&amp;')
-        .replace(/\"/g, '&quot;')
-        .replace(/>/g, '&gt;')
-        .replace(/</g, '&lt;')
-      content = converter.makeHtml(content);
+      content = markdown.toHTML(val, void 0, { cut: false });
       $preview.html(content);
     }
     $preview.show();

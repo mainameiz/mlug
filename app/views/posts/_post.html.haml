@@ -1,21 +1,20 @@
-= form_for @post, class: 'post_form' do |f|
-  .actions
-    = f.submit t('create')
-    = f.submit t('preview'), name: 'preview', class: 'preview_button', data: { edit_text: t('edit') }
-  #post_preview
-    - if params[:preview]
-      = @post.body.blank? ? t('nothing_to_preview') : showdown_markdown(@post.body)
-    - else
-      = t('nothing_to_preview')
-  #post_editor
-    .field
-      = f.label :title
-      %br
-      = f.text_field :title
-    .field
-      = f.label :body
-      %br
-      = f.text_area :body, id: 'source'
-  .actions
-    = f.submit t('create')
-    = f.submit t('preview'), name: 'preview', class: 'preview_button', data: { edit_text: t('edit') }
+- present @post do |post_presenter|
+  = form_for @post, class: 'post_form' do |f|
+    .actions
+      = post_presenter.create_link(f)
+      = post_presenter.preview_link(f)
+    #post_preview{ data: { 'default-text' => t('nothing_to_preview') }}
+      - if params[:preview] and not @post.body.blank?
+        = showdown_markdown(@post.body)
+    #post_editor
+      .field
+        = f.label :title
+        %br
+        = f.text_field :title
+      .field
+        = f.label :body
+        %br
+        = f.text_area :body, id: 'source'
+    .actions
+      = post_presenter.create_link(f)
+      = post_presenter.preview_link(f)

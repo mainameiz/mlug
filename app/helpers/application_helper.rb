@@ -51,12 +51,16 @@ module ApplicationHelper
   end
 =end
 
-  def showdown_markdown(text)
+  def showdown_markdown(text, cut)
     c = V8::Context.new
-    showdown = File.read(Rails.root.join('app/assets/javascripts/showdown.js'))
-    c.eval(showdown)
-    c.eval("conv = (new Showdown.converter())")
-    c[:conv].makeHtml(ERB::Util.html_escape(text)).html_safe
+    #showdown = File.read(Rails.root.join('vendor/assets/javascripts/showdown.js'))
+    markdown = File.read(Rails.root.join('vendor/assets/javascripts/markdown.js'))
+    #c.eval(showdown)
+    c.eval('window = {}')
+    c.eval(markdown)
+    #c.eval("conv = (new Showdown.converter())")
+    #c[:conv].makeHtml(ERB::Util.html_escape(text)).html_safe
+    c[:window].markdown.toHTML(text, "Gruber", { cut: cut }).html_safe
   end
 
 =begin

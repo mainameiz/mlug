@@ -11,3 +11,12 @@ en:
   replay: 'Replay'
   preview: 'Preview'
   nothing_to_preview: 'Nothing to preview'
+  read_more: "Read more"
+  of_comments: "Комментариев"
+  helpers:
+    submit:
+      post:
+        create: 'Create post'
+        update: 'Update post'
+        edit:   'Edit post'
+        save:   'Save post'

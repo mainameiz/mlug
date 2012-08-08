@@ -1,0 +1,12 @@
+- present post, PostPreviewPresenter do |post_preview_presenter|
+  %article.post_preview
+    .actions
+      = post_preview_presenter.actions
+    %h2
+      = post_preview_presenter.title
+    %div
+      = post_preview_presenter.body
+    .read_more
+      = post_preview_presenter.read_more
+    .info
+      = post_preview_presenter.info

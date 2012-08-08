@@ -1,9 +1,5 @@
-= render layout: 'comments/comment', locals: { comment: @comment } do
-  - unless @new_comment.text.blank?
-    = render @new_comment
-  - if can? :replay, @comment
-    = form_for [@post, @new_comment], url: replay_post_comment_path(@post, @comment), method: :post do |f|
-      = f.text_area :text, rows: 4
-      %p
-        = f.submit t('replay')
-        = f.submit t('preview'), name: 'preview'
+- present @comment do |comment_presenter|
+  = render layout: 'comments/comment', locals: { comment: @comment } do
+    - unless @new_comment.text.blank?
+      = render @new_comment
+    = comment_presenter.replay_form(@new_comment)

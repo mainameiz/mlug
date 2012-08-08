@@ -7,16 +7,21 @@
     %link{ :href=>'http://fonts.googleapis.com/css?family=Jura&subset=latin,cyrillic', :rel=>'stylesheet', :type=>'text/css' }
     = stylesheet_link_tag    "application", :media => "all"
     = stylesheet_link_tag    "posts"
+    = stylesheet_link_tag    "comments"
     -#= stylesheet_link_tag    "jquery-ui"
     = javascript_include_tag "application"
     = javascript_include_tag "posts"
     -#= javascript_include_tag "jquery-ui"
     -#= javascript_include_tag "rangy-core"
     -#= javascript_include_tag "hallo"
-    = javascript_include_tag "showdown"
+    = javascript_include_tag "markdown"
     -#= javascript_include_tag "to-markdown"
     -#= javascript_include_tag "editor"
-    = javascript_include_tag "editor"
+    = javascript_include_tag "underscore"
+    = javascript_include_tag "markdown-toolbar"
+    = javascript_include_tag "classes"
+    = javascript_include_tag "comment-editor"
+    = javascript_include_tag "post-editor"
     = yield(:styles)
     = yield(:scripts)
     = csrf_meta_tags
@@ -28,13 +33,3 @@
         #middle><
           = yield
         = render 'shared/footer'
-    -#%script{ type: 'text/javascript' }
-      :plain
-        $(document).ready(function() {
-          $('.editable').hallo({
-            plugins: {
-              'halloformat': {}
-            },
-            editable: true
-          });
-        });
